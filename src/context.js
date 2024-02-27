@@ -35,6 +35,7 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchBookDetails("Love", 1, 1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchBookDetails = async (bookName, page, check) => {
