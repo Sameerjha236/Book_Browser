@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAppContext } from "../context";
 const SearchBar = () => {
   const { curr, setCurr, submitHandler } = useAppContext();
