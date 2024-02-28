@@ -11,7 +11,7 @@ export const AppProvider = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedPublicationDate, setSelectedPublicationDate] = useState("");
   const [page, setPage] = useState(1);
-  const API_KEY = "AIzaSyACjTi82v2T-puT71aMuslFJkJz4zuZr8M";
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
   const categories = [
     "Fiction",
