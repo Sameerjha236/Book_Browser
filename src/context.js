@@ -5,7 +5,7 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [mode, setMode] = useState("false");
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("mind");
   const [curr, setCurr] = useState("");
   const [books, setBooks] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -34,7 +34,7 @@ export const AppProvider = ({ children }) => {
   ];
 
   useEffect(() => {
-    fetchBookDetails("Love", 1, 1);
+    fetchBookDetails("mind", 1, 1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

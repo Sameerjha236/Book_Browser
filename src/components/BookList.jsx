@@ -2,33 +2,29 @@ import React, { useEffect } from "react";
 import { useAppContext } from "../context";
 import Book from "./Book";
 import Filter from "./Filter";
-import { debounce } from "lodash"; // Import debounce function from lodash
+import { debounce } from "lodash";
 
 const BookList = () => {
   const { books, value, fetchBookDetails, page } = useAppContext();
 
-  // Debounce the handleScroll function to prevent it from being called too frequently
   const handleScroll = debounce(() => {
-    const buffer = 100; // Adjust this value as needed
+    const buffer = 100;
     if (
       window.innerHeight + document.documentElement.scrollTop + buffer >=
       document.documentElement.offsetHeight
     ) {
-      console.log("fetch again");
-      fetchBookDetails(value, page + 1, 1); // Trigger function to fetch more books with the next page
+      fetchBookDetails(value, page + 1, 1);
     }
-  }, 300); // Set the debounce delay to 300ms
+  }, 300);
 
-  // Add event listener for infinite scrolling
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      handleScroll.cancel(); // Cancel any pending debounce calls when the component unmounts
+      handleScroll.cancel();
     };
-  }, [fetchBookDetails, page, handleScroll]); // Include fetchBookDetails, page, and handleScroll in dependency array
-
+  }, [fetchBookDetails, page, handleScroll]);
   return (
     <div className="BookList w-full flex flex-col justify-center items-center gap-8">
       <Filter />
