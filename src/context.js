@@ -66,6 +66,7 @@ export const AppProvider = ({ children }) => {
 
   const submitHandler = (event) => {
     if (event.key === "Enter") {
+      event.preventDefault();
       setValue(curr);
       setPage(1);
       setBooks([]);
