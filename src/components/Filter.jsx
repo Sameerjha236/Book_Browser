@@ -16,7 +16,6 @@ const Filter = () => {
 
   return (
     <div className="Filter flex justify-center items-center gap-4">
-      {/* Category Filter */}
       <select onChange={handleCategoryChange}>
         <option value="all">All Categories</option>
         {categories.map((category) => (
@@ -26,7 +25,6 @@ const Filter = () => {
         ))}
       </select>
 
-      {/* Publication Date Filter */}
       <input type="date" onChange={handleDateChange} />
     </div>
   );

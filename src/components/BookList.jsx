@@ -25,6 +25,7 @@ const BookList = () => {
       handleScroll.cancel();
     };
   }, [fetchBookDetails, page, handleScroll]);
+
   return (
     <div className="BookList w-full flex flex-col justify-center items-center gap-8">
       <Filter />

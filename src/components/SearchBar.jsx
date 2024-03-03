@@ -2,9 +2,14 @@ import React from "react";
 import { useAppContext } from "../context";
 const SearchBar = () => {
   const { curr, setCurr, submitHandler } = useAppContext();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submitHandler();
+  };
+
   return (
     <div className="SearchBar flex w-52 sm:w-80">
-      <form onSubmit={submitHandler}>
+      <form onSubmit={handleSubmit} className="w-full">
         <input
           type="text"
           value={curr}

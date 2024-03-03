@@ -1,4 +1,3 @@
-// context.js
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const AppContext = createContext();
@@ -46,7 +45,7 @@ export const AppProvider = ({ children }) => {
         }&maxResults=10`
       );
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       const formattedBooks = data.items.map((item) => ({
         id: item.id,
         title: item.volumeInfo.title,
@@ -58,21 +57,15 @@ export const AppProvider = ({ children }) => {
       }));
       if (check) setBooks([...books, ...formattedBooks]);
       else setBooks(formattedBooks);
-    } catch (error) {
-      // window.alert("No more books available");
-      // console.log("No more books available");
-    }
+    } catch (error) {}
   };
 
   const submitHandler = (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      setValue(curr);
-      setPage(1);
-      setBooks([]);
-      fetchBookDetails(curr, 1, 0);
-      setCurr("");
-    }
+    setValue(curr);
+    setPage(1);
+    setBooks([]);
+    fetchBookDetails(curr, 1, 0);
+    setCurr("");
   };
 
   const filteredBooks = () => {
