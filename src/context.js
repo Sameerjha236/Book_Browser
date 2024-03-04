@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [mode, setMode] = useState("false");
+  const [mode, setMode] = useState(false);
   const [value, setValue] = useState("mind");
   const [curr, setCurr] = useState("");
   const [books, setBooks] = useState([]);
