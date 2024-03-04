@@ -6,7 +6,7 @@ const Book = ({ book }) => {
   const { mode } = useAppContext();
   return (
     <div
-      className={`flex gap-2 w-2/3 justify-around items-center rounded-lg transform hover:scale-105 transition-transform duration-500  ${
+      className={`flex gap-2 w-2/3 text-wrap justify-around items-center rounded-lg transform hover:scale-105 transition-transform duration-500  ${
         mode
           ? "bg-sky-300 text-zinc-800 hover:bg-sky-400"
           : "bg-sky-600 text-zinc-200 hover:bg-sky-500"
@@ -20,8 +20,8 @@ const Book = ({ book }) => {
         />
       </div>
       <div className="flex flex-col justify-center items-center gap-2 w-1/2">
-        <h1 className="font-bold text-2xl text-center">{title}</h1>
-        <h3 className="text-xl">{authors}</h3>
+        <h1 className="font-bold sm:text-2xl text-xl text-center">{title}</h1>
+        <h3 className="sm:text-xl text-l">{authors}</h3>
         {showDetail ? (
           <div className="flex flex-col justify-center items-center">
             <p>{description.substring(0, 300)}...</p>
