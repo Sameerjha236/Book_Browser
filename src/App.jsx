@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div
       className={`App min-h-screen flex flex-col items-center gap-8 ${
-        mode ? "bg-sky-200" : "bg-sky-700"
+        mode ? "bg-sky-200" : "bg-zinc-900"
       }`}
     >
       <Navbar />

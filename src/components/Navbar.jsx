@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <div
       className={`Navbar w-full h-20 flex justify-between items-center p-8 ${
-        mode ? "bg-sky-300" : "bg-sky-900"
+        mode ? "bg-sky-300" : "bg-zinc-800"
       }`}
     >
       <h1

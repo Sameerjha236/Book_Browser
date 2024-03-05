@@ -9,7 +9,7 @@ const Book = ({ book }) => {
       className={`flex gap-2 w-2/3 text-wrap justify-around items-center rounded-lg transform hover:scale-105 transition-transform duration-500  ${
         mode
           ? "bg-sky-300 text-zinc-800 hover:bg-sky-400"
-          : "bg-sky-600 text-zinc-200 hover:bg-sky-500"
+          : "bg-zinc-800 text-zinc-200 hover:bg-zinc-700"
       }`}
     >
       <div className="">
